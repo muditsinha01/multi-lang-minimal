@@ -1,3 +1,7 @@
-dependencies = [
-    "urllib3==1.25.11",
-]
+module example.com/multi-lang-minimal
+
+go 1.22
+
+require github.com/sirupsen/logrus v1.4.1
+[project]
+dependencies = ["urllib3==1.26.19"]
