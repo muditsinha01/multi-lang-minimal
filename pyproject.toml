@@ -1,3 +1,5 @@
 dependencies = [
     "urllib3==1.25.11",
 ]
+[project]
+dependencies = ["urllib3==1.26.19"]
