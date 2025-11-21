@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-lang-minimal"
+version = "0.1.0"
+description = "Tiny mixed Go+Python project for SBOM / manifest testing"
+requires-python = ">=3.10"
+dependencies = [
+    "requests==2.32.3",
+]
