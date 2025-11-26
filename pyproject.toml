@@ -4,19 +4,7 @@ version = "0.1.0"
 description = "Fixture to test ManifestUpdater.update_toml"
 
 # mixed dependencies: inline tables + plain strings
-dependencies = [
-  # TARGET: urllib3 (version + hashes updated)
-  { name = "urllib3", version = "==1.26.15", hashes = [
-      "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
-      "sha256:abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
-  ] },
-
-  # NON-TARGET: requests – no recommendation, must remain unchanged
-  { name = "requests", version = "==2.31.0" },
-
-  # NON-TARGET: left as-is
-  "idna==3.6",
-]
+dependencies = ["urllib3==1.26.19", "==1.26.15", "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef", "sha256:abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789", "requests", "==2.31.0", "idna==3.6"]
 
 [project.optional-dependencies]
 test = [
