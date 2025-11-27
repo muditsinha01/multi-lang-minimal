@@ -1,24 +1,43 @@
-# tests/data/requirements_hashed_example.txt
-# This file is used to test ManifestUpdater.update_requirements
-# with pip-compile style hashes + plain requirements.
+[project]
+name = "example-project"
+version = "0.1.0"
+description = "Fixture to test ManifestUpdater.update_toml"
 
-# 1) Hashed with markers (TARGET: urllib3 gets version + hashes updated)
-urllib3==1.26.15 \
-    --hash=sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef \
-    --hash=sha256:abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789 \
-    ; python_version >= "3.8"
+# mixed dependencies: inline tables + plain strings
+dependencies = [
+  # TARGET: urllib3 (version + hashes updated)
+  { name = "urllib3", version = "==1.26.15", hashes = [
+      "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "sha256:abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+  ] },
 
-# 2) Hashed without markers (NON-TARGET: must remain unchanged)
-charset-normalizer==3.4.0 \
-    --hash=sha256:1111111111111111111111111111111111111111111111111111111111111111 \
-    --hash=sha256:2222222222222222222222222222222222222222222222222222222222222222 \
+  # NON-TARGET: requests – no recommendation, must remain unchanged
+  { name = "requests", version = "==2.31.0" },
 
-# 3) Plain requirement (TARGET: pip is bumped from 24.0 to 25.0.1, no hashes added)
-pip==24.0
+  # NON-TARGET: left as-is
+  "idna==3.6",
+]
 
-# 4) Plain requirement (NON-TARGET: requests is *not* in recs, must stay as-is)
-requests==2.31.0
+[project.optional-dependencies]
+test = [
+  # NON-TARGET: should not be touched
+  "pytest==7.4.0",
+]
 
-# 5) A comment and blank line to ensure we preserve them
-# some comment that must survive intact
+[tool.poetry.dependencies]
+python = "^3.11"
+# TARGET (if you want): can update via recs for urllib3
+urllib3==1.26.19
+# NON-TARGET
+tomli = "2.0.1"
 
+[build-system]
+requires = [
+  # TARGET: this is where pip comes from the purl pypi:pip:25.0.1
+  "setuptools==68.0.0",
+  "pip==24.0",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.some_other_tool]
+ignore_me = true
