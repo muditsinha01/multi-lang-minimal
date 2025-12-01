@@ -3,9 +3,9 @@
 # with pip-compile style hashes + plain requirements.
 
 # 1) Hashed with markers (TARGET: urllib3 gets version + hashes updated)
-urllib3==1.26.15 \
-    --hash=sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef \
-    --hash=sha256:abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789 \
+urllib3==1.26.19 \
+    --hash=sha256:37a0344459b199fce0e80b0d3569837ec6b6937435c5244e7fd73fa6006830f3 \
+    --hash=sha256:3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429 \
     ; python_version >= "3.8"
 
 # 2) Hashed without markers (NON-TARGET: must remain unchanged)
@@ -21,4 +21,3 @@ requests==2.31.0
 
 # 5) A comment and blank line to ensure we preserve them
 # some comment that must survive intact
-
