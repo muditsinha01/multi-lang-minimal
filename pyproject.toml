@@ -6,11 +6,6 @@ description = "Fixture to test ManifestUpdater.update_toml"
 # mixed dependencies: inline tables + plain strings
 dependencies = [
   # TARGET: urllib3 (version + hashes updated)
-  { name = "urllib3", version = "==1.26.15", hashes = [
-      "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
-      "sha256:abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
-  ] },
-
   # NON-TARGET: requests – no recommendation, must remain unchanged
   { name = "requests", version = "==2.31.0" },
 
@@ -26,8 +21,6 @@ test = [
 
 [tool.poetry.dependencies]
 python = "^3.11"
-# TARGET (if you want): can update via recs for urllib3
-urllib3 = "1.26.15"
 # NON-TARGET
 tomli = "2.0.1"
 
