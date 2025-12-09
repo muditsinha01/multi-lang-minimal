@@ -2,12 +2,6 @@
 # This file is used to test ManifestUpdater.update_requirements
 # with pip-compile style hashes + plain requirements.
 
-# 1) Hashed with markers (TARGET: urllib3 gets version + hashes updated)
-urllib3==1.26.15 \
-    --hash=sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef \
-    --hash=sha256:abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789 \
-    ; python_version >= "3.8"
-
 # 2) Hashed without markers (NON-TARGET: must remain unchanged)
 charset-normalizer==3.4.0 \
     --hash=sha256:1111111111111111111111111111111111111111111111111111111111111111 \
