@@ -16,5 +16,3 @@ requests==2.31.0
 # 5) A comment and blank line to ensure we preserve them
 # some comment that must survive intact
 
-redshift_connector==2.1.8 \
-    --hash=sha256:160dff3720e8facb5f50f9585f3f68dd5565dd0d986e4e6a879371313da1b36e
