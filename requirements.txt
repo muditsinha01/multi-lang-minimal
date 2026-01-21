@@ -756,8 +756,8 @@ pytz==2025.2 \
     --hash=sha256:360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3 \
     --hash=sha256:5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00
     # via redshift-connector
-redshift-connector==2.1.5 \
-    --hash=sha256:a90e5644a1d8f58f9d6d62c6ee000bb7788dcbfb9c9b3b4e114d66ccbfc82478
+redshift-connector==2.1.8 \
+    --hash=sha256:160dff3720e8facb5f50f9585f3f68dd5565dd0d986e4e6a879371313da1b36e \
     # via -r requirements.in
 requests==2.32.3 \
     --hash=sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760 \
