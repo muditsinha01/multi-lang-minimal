@@ -1,0 +1,16 @@
+amazon-kclpy
+cryptography
+datadog
+exceptiongroup
+fastapi
+jq
+pip
+protobuf
+pyjwt
+pymysql
+python-json-logger
+python-snappy
+redshift-connector
+sqlalchemy-redshift
+sqlalchemy-utils
+uvicorn
