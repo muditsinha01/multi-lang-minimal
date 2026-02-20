@@ -3,13 +3,8 @@ name = "example-project"
 version = "0.1.0"
 description = "Fixture to test ManifestUpdater.update_toml"
 
-# mixed dependencies: inline tables + plain strings
 dependencies = [
-  # TARGET: urllib3 (version + hashes updated)
-  # NON-TARGET: requests – no recommendation, must remain unchanged
-  { name = "requests", version = "==2.31.0" },
-
-  # NON-TARGET: left as-is
+  "requests==2.31.0",
   "idna==3.6",
 ]
 
