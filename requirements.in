@@ -1,0 +1,25 @@
+# Direct dependencies
+amazon-kclpy
+datadog
+exceptiongroup
+fastapi>=0.116.0           # required to allow starlette>=0.49.1 (CVE-2025-54121, CVE-2025-62727)
+jq
+pymysql
+python-json-logger
+python-snappy
+sqlalchemy-redshift
+sqlalchemy-utils
+
+# Security fixes — pinned to minimum safe versions
+botocore>=1.29.0           # botocore 1.27.x caps urllib3<1.27; needed to allow urllib3>=2.6.3
+cryptography>=46.0.5       # CVE-2026-26007
+h11>=0.16.0                # CVE-2025-43859 (via uvicorn)
+idna>=3.7                  # PYSEC-2024-60 (via requests)
+pip>=26.0                  # CVE-2025-8869, CVE-2026-1703
+protobuf>=6.33.5           # CVE-2025-4565, CVE-2026-0994
+pyjwt
+redshift-connector>=2.1.7  # CVE-2025-5279
+requests>=2.32.4           # CVE-2024-47081
+starlette>=0.49.1          # CVE-2025-54121, CVE-2025-62727 (via fastapi)
+urllib3>=2.6.3             # CVE-2025-50181, CVE-2025-66418, CVE-2025-66471, CVE-2026-21441
+uvicorn
